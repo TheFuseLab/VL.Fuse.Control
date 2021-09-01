@@ -19,3 +19,5 @@
 /src/Fuse.Controls/obj/Fuse.Controls.csproj.nuget.g.targets
 /src/Fuse.Controls/obj/project.assets.json
 /src/Fuse.Controls/obj/project.nuget.cache
+/src/Fuse.Controls/.vs/*
+/src/Fuse.Controls/obj/*
