@@ -25,7 +25,7 @@
         }
         
         public override ControlPoint Clone() {
-            return new HandleControlPoint(Parent, _myHandleType, _myTime, _myValue);
+            return new HandleControlPoint(Parent, _myHandleType, Time, Value);
         }
     }
 }

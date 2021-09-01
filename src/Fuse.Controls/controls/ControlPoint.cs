@@ -20,7 +20,6 @@ namespace Fuse.Controls
 	}
 	
 	
-	float _myIndex;
 
 	/**
 	 * Type of the curve after this point
@@ -29,10 +28,7 @@ namespace Fuse.Controls
 	
 	protected ControlPoint _myPrevious;
 	protected ControlPoint _myNext;
-	
-	protected float _myTime;
-	protected float _myValue;
-	
+
 	public ControlPoint() :this(0, 0, ControlPointType.LINEAR){
 		
 	}
@@ -46,11 +42,10 @@ namespace Fuse.Controls
 	}
 	
 	public ControlPoint(float theTime, float theValue, ControlPointType theControlPointType) {
-		_myTime = theTime;
-		_myValue = theValue;
+		Time = theTime;
+		Value = theValue;
 		
 		_myType = theControlPointType;
-		_myIndex = 0;
 		_myPrevious = null;
 		_myNext = null;
 	}
@@ -148,7 +143,7 @@ namespace Fuse.Controls
 	}
 
 	public virtual float InterpolateValue(float theTime, AnimationCurve theData) {
-		return _myValue;
+		return Value;
 	}
 	
 	public float Value
@@ -158,15 +153,15 @@ namespace Fuse.Controls
 	}
 
     public float distance(ControlPoint theOtherPoint) {
-        var myTimeDistance = _myTime - theOtherPoint.Time;
-        var myValueDistance = _myValue - theOtherPoint.Value;
+        var myTimeDistance = Time - theOtherPoint.Time;
+        var myValueDistance = Value - theOtherPoint.Value;
         return (float)Math.Sqrt(myTimeDistance*myTimeDistance + myValueDistance*myValueDistance);
     }
 	
 	public bool isPrevious(ControlPoint thePoint) {
-		if (thePoint._myTime > _myTime) {
+		if (thePoint.Time > Time) {
 			return true;
-		} else if (thePoint._myTime < _myTime) {
+		} else if (thePoint.Time < Time) {
 			return false;
 		}
 		var myCurrent = _myNext;
@@ -180,9 +175,9 @@ namespace Fuse.Controls
 	}
 	
 	public bool IsNext(ControlPoint thePoint) {
-		if (thePoint._myTime < _myTime) {
+		if (thePoint.Time < Time) {
 			return true;
-		} else if (thePoint._myTime > _myTime) {
+		} else if (thePoint.Time > Time) {
 			return false;
 		}
 		var myCurrent = _myPrevious;
@@ -201,7 +196,7 @@ namespace Fuse.Controls
 	}
 	
 	public virtual ControlPoint Clone() {
-		return new ControlPoint(_myTime, _myValue);
+		return new ControlPoint(Time, Value);
 	}
 	
 
@@ -210,11 +205,11 @@ namespace Fuse.Controls
 		{
 			return false;
 		}
-		return ((ControlPoint)theObj).Time == _myTime && ((ControlPoint)theObj).Value == _myValue;
+		return ((ControlPoint)theObj).Time == Time && ((ControlPoint)theObj).Value == Value;
 	}
 	
 	public override string ToString() {
-		return "type: " + _myType + " time: " + _myTime + " Value:" + _myValue;
+		return "type: " + _myType + " time: " + Time + " Value:" + Value;
 	}
 	
 	
@@ -245,8 +240,8 @@ namespace Fuse.Controls
 	public CCDataObject data(float theStartTime, float theEndTime) {
 		CCDataObject myResult = new CCDataObject();
 		myResult.put(CONTROL_POINT_TYPE_ATTRIBUTE, _myType.toString());
-		myResult.put(TIME_ATTRIBUTE, _myTime - theStartTime);
-		myResult.put(VALUE_ATTRIBUTE, _myValue);
+		myResult.put(TIME_ATTRIBUTE, Time - theStartTime);
+		myResult.put(VALUE_ATTRIBUTE, Value);
 		if(_myBlendable != null) {
 			myResult.put(BLENDABLE_ATTRIBUTE, _myBlendable.data());
 		}
@@ -256,8 +251,8 @@ namespace Fuse.Controls
 	protected static final String  COLOR_TYPE = CCColor.class.getName();
 	
 	public void data(CCDataObject theData) {
-		_myTime = theData.getfloat(TIME_ATTRIBUTE);
-		_myValue = theData.getfloat(VALUE_ATTRIBUTE);
+		Time = theData.getfloat(TIME_ATTRIBUTE);
+		Value = theData.getfloat(VALUE_ATTRIBUTE);
 		if(!theData.containsKey(BLENDABLE_ATTRIBUTE))return;
 		CCDataObject myBlendableData = theData.getObject(BLENDABLE_ATTRIBUTE);
 		if(myBlendableData.getString(CCBlendable.BLENDABLE_TYPE_ATTRIBUTE).equals(CCColor.class.getName())) {

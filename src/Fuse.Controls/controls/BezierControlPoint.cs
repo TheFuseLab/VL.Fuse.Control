@@ -6,8 +6,6 @@ namespace Fuse.Controls
 {
     public class BezierControlPoint : ControlPoint
     {
-        private HandleControlPoint _myInHandle;
-		private HandleControlPoint _myOutHandle;
 
 	public BezierControlPoint() : base(ControlPointType.BEZIER) {
 		
@@ -85,22 +83,22 @@ namespace Fuse.Controls
 			}
 			
 			if(p1.GetType() == typeof(BezierControlPoint)) {
-				p2 = ((BezierControlPoint)p1)._myOutHandle;
+				p2 = ((BezierControlPoint)p1).OutHandle;
 			}else {
 				p2 = p1;
 			}
 	
-			return SampleBezierSegment(p1, p2, _myInHandle, this, theTime);
-		}catch(Exception e){
+			return SampleBezierSegment(p1, p2, InHandle, this, theTime);
+		}catch(Exception){
 			return 0;
 		}
 	}
 	
 	public override ControlPoint Clone() {
-		var myResult = new BezierControlPoint(_myTime, _myValue) {InHandle = (HandleControlPoint) _myInHandle.Clone()};
+		var myResult = new BezierControlPoint(Time, Value) {InHandle = (HandleControlPoint) InHandle.Clone()};
 		myResult.InHandle.Parent = myResult;
 		
-		myResult.OutHandle = (HandleControlPoint)_myOutHandle.Clone();
+		myResult.OutHandle = (HandleControlPoint)OutHandle.Clone();
 		myResult.OutHandle.Parent = myResult;
 		
 		return myResult;
@@ -112,11 +110,11 @@ namespace Fuse.Controls
 	public override float Time {
 		set
 		{
-			var myDifference = value - _myTime;
+			var myDifference = value - Time;
 			base.Time = value;
 
-			_myInHandle.Time += myDifference;
-			_myOutHandle.Time += myDifference;
+			InHandle.Time += myDifference;
+			OutHandle.Time += myDifference;
 		}
 	}
 	

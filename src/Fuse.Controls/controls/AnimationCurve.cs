@@ -178,7 +178,7 @@ namespace Fuse.Controls
 	public ControlPoint GetLastPoint() {
 		try {
 			return GetLastOnSamePosition(Max);
-		} catch (Exception e) {
+		} catch (Exception) {
 			return null;
 		}
 	}
@@ -317,7 +317,6 @@ namespace Fuse.Controls
 
 	
 	public new void Remove(ControlPoint thePoint) {
-		var myResult = false;
 		if (Contains(thePoint)) { // we have one ore more points at the location
 			var myTreeLeaf = Floor(thePoint); // get the tree leaf
 			if (myTreeLeaf == thePoint) { // we are removing the leaf
@@ -329,7 +328,6 @@ namespace Fuse.Controls
 					base.Remove(myTreeLeaf);
 				}
 			}
-			myResult = true;
 		}
 		// update float linked list
 		if (thePoint.hasPrevious()) {

@@ -49,7 +49,7 @@ namespace Fuse.Controls
         }
 
         public new LinearControlPoint Clone() {
-            var myResult = new LinearControlPoint(_myTime, _myValue);
+            var myResult = new LinearControlPoint(Time, Value);
            // if(_myBlendable != null)myResult._myBlendable = (CCBlendable<?>)_myBlendable.clone();
             return myResult;
         }
