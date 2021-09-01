@@ -9,6 +9,7 @@
     <license type="expression">LGPL-3.0-only</license>
     <licenseUrl>https://licenses.nuget.org/LGPL-3.0-only</licenseUrl>
     <projectUrl>https://github.com/TheFuseLab/VL.Fuse.Control</projectUrl>
+    <description>Fuse editors</description>
     <tags>VL</tags>
     <dependencies>
       <dependency id="VL.Inspector" version="1.0.0" />
