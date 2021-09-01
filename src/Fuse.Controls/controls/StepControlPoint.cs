@@ -14,7 +14,7 @@
         }
 	
         public override float InterpolateValue(float theTime, AnimationCurve theData) {
-            var myPrevious = getPrevious();
+            var myPrevious = Previous;
 		
             return myPrevious?.Value ?? Value;
         }
