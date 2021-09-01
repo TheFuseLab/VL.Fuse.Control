@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>VL.Fuse.Control</id>
+    <version>1.0.0</version>
+    <authors>TheFuseLab</authors>
+    <owners>TheFuseLab</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">LGPL-3.0-only</license>
+    <licenseUrl>https://licenses.nuget.org/LGPL-3.0-only</licenseUrl>
+    <projectUrl>https://github.com/TheFuseLab/VL.Fuse.Control</projectUrl>
+    <tags>VL</tags>
+    <dependencies>
+      <dependency id="VL.Inspector" version="1.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\*.vl" target="" exclude="" />
+    <file src="..\lib\net472\Fuse.Control.dll" target="lib\" exclude="" />
+  </files>
+</package>
