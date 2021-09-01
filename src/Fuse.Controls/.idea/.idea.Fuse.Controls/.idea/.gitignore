@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.Fuse.Controls.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\dev\vl\repo\VL.Fuse.Controls\src\Fuse.Controls\.idea\.idea.Fuse.Controls\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

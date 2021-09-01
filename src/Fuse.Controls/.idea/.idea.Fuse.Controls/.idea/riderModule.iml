@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/.nuget/packages/stride.audio/4.0.1.1400/runtimes/win/lib/netstandard2.0" />
+    <content url="file://$USER_HOME$/.nuget/packages/stride.core/4.0.1.1400/runtimes/win/lib/netstandard2.0/Stride.Core.ssdeps" />
+    <content url="file://$USER_HOME$/.nuget/packages/stride.graphics/4.0.1.1400/runtimes/win/lib/netstandard2.0/Direct3D11" />
+    <content url="file://$USER_HOME$/.nuget/packages/stride.native/4.0.1.1400/runtimes/win/lib/netstandard2.0/Stride.Native.ssdeps" />
+    <content url="file://$USER_HOME$/.nuget/packages/stride.navigation/4.0.1.1400/runtimes/win/lib/netstandard2.0/Stride.Navigation.ssdeps" />
+    <content url="file://$USER_HOME$/.nuget/packages/stride.physics/4.0.1.1400/runtimes/win/lib/netstandard2.0/Stride.Physics.ssdeps" />
+    <content url="file://$USER_HOME$/.nuget/packages/stride.shaders.compiler/4.0.1.1400/runtimes/win/lib/netstandard2.0/Direct3D11/Stride.Shaders.Compiler.ssdeps" />
+    <content url="file://$USER_HOME$/.nuget/packages/stride.shaders.compiler/4.0.1.1400/runtimes/win/lib/netstandard2.0/Direct3D11/glslangValidator.exe" />
+    <content url="file://$USER_HOME$/.nuget/packages/stride.video/4.0.1.1400/runtimes/win/lib/netstandard2.0/Direct3D11/Stride.Video.ssdeps" />
+    <content url="file://$USER_HOME$/.nuget/packages/stride.virtualreality/4.0.1.1400/runtimes/win/lib/netstandard2.0/Direct3D11/Stride.VirtualReality.ssdeps" />
+    <content url="file://$MODULE_DIR$/../.." />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
