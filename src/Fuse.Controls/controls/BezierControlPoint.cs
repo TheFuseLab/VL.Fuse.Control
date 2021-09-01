@@ -7,7 +7,7 @@ namespace Fuse.Controls
     public class BezierControlPoint : ControlPoint
     {
         private HandleControlPoint _myInHandle;
-	private HandleControlPoint _myOutHandle;
+		private HandleControlPoint _myOutHandle;
 
 	public BezierControlPoint() : base(ControlPointType.BEZIER) {
 		
@@ -75,13 +75,13 @@ namespace Fuse.Controls
 	public override float InterpolateValue(float theTime, AnimationCurve theData) {
 		try{
 			var mySample = new ControlPoint(theTime, 0);
-			SortedSet<ControlPoint> myHeadSet = theData.headSet(mySample, false);
+			var myHeadSet = theData.HeadSet(mySample, false);
 	
 			ControlPoint p1 = null;
 			ControlPoint p2 = null;
 	
-			if (myHeadSet.Count != 0) {
-				p1 = theData.getLastOnSamePosition(myHeadSet.Last());
+			if (myHeadSet.Count() != 0) {
+				p1 = theData.GetLastOnSamePosition(myHeadSet.Last());
 			}
 			
 			if(p1.GetType() == typeof(BezierControlPoint)) {
@@ -97,11 +97,10 @@ namespace Fuse.Controls
 	}
 	
 	public override ControlPoint Clone() {
-		var myResult = new BezierControlPoint(_myTime, _myValue);
-		myResult.InHandle = (HandleControlPoint)_myInHandle.Clone();
+		var myResult = new BezierControlPoint(_myTime, _myValue) {InHandle = (HandleControlPoint) _myInHandle.Clone()};
 		myResult.InHandle.Parent = myResult;
 		
-		myResult.OutHandle = (HandleControlPoint)_myOutHandle.Clone());
+		myResult.OutHandle = (HandleControlPoint)_myOutHandle.Clone();
 		myResult.OutHandle.Parent = myResult;
 		
 		return myResult;

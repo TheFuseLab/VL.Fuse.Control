@@ -9,58 +9,52 @@ namespace Fuse.Controls
 		private static Tuple<int, int> GetPossibleIndices<TKey, TValue>(SortedDictionary<TKey, TValue> dictionary, TKey key, bool strictlyDifferent, out List<TKey> list)
 		{
 			list = dictionary.Keys.ToList();
-			int index = list.BinarySearch(key, dictionary.Comparer);
+			var index = list.BinarySearch(key, dictionary.Comparer);
 			if (index >= 0)
 			{
 				// exists
-				if (strictlyDifferent)
-					return Tuple.Create(index - 1, index + 1);
-				else
-					return Tuple.Create(index, index);
+				return strictlyDifferent ? Tuple.Create(index - 1, index + 1) : Tuple.Create(index, index);
 			}
-			else
-			{
-				// doesn't exist
-				int indexOfBiggerNeighbour = ~index; //bitwise complement of the return value
 
-				if (indexOfBiggerNeighbour == list.Count)
-				{
-					// bigger than all elements
-					return Tuple.Create(list.Count - 1, list.Count);
-				}
-				else if (indexOfBiggerNeighbour == 0)
-				{
-					// smaller than all elements
-					return Tuple.Create(-1, 0);
-				}
-				else
-				{
-					// Between 2 elements
-					int indexOfSmallerNeighbour = indexOfBiggerNeighbour - 1;
-					return Tuple.Create(indexOfSmallerNeighbour, indexOfBiggerNeighbour);
-				}
+			// doesn't exist
+			var indexOfBiggerNeighbour = ~index; //bitwise complement of the return Value
+
+			if (indexOfBiggerNeighbour == list.Count)
+			{
+				// bigger than all elements
+				return Tuple.Create(list.Count - 1, list.Count);
 			}
+
+			if (indexOfBiggerNeighbour == 0)
+			{
+				// smaller than all elements
+				return Tuple.Create(-1, 0);
+			}
+
+			// Between 2 elements
+			var indexOfSmallerNeighbour = indexOfBiggerNeighbour - 1;
+			return Tuple.Create(indexOfSmallerNeighbour, indexOfBiggerNeighbour);
 		}
 
 		public static TKey LowerKey<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key)
 		{
-			var indices = GetPossibleIndices(dictionary, key, true, out var list);
-			return indices.Item1 < 0 ? default : list[indices.Item1];
+			var (item1, _) = GetPossibleIndices(dictionary, key, true, out var list);
+			return item1 < 0 ? default : list[item1];
 		}
 		public static KeyValuePair<TKey, TValue> LowerEntry<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key)
 		{
-			var indices = GetPossibleIndices(dictionary, key, true, out var list);
-			if (indices.Item1 < 0)
+			var (item1, _) = GetPossibleIndices(dictionary, key, true, out var list);
+			if (item1 < 0)
 				return default;
 
-			var newKey = list[indices.Item1];
+			var newKey = list[item1];
 			return new KeyValuePair<TKey, TValue>(newKey, dictionary[newKey]);
 		}
 	
 		public static TKey FloorKey<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key)
 		{
-			var indices = GetPossibleIndices(dictionary, key, false, out var list);
-			return indices.Item1 < 0 ? default : list[indices.Item1];
+			var (item1, _) = GetPossibleIndices(dictionary, key, false, out var list);
+			return item1 < 0 ? default : list[item1];
 		}
 		public static KeyValuePair<TKey, TValue> FloorEntry<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key)
 		{
@@ -74,32 +68,26 @@ namespace Fuse.Controls
 
 		public static TKey CeilingKey<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key)
 		{
-			List<TKey> list;
-			var indices = GetPossibleIndices(dictionary, key, false, out list);
-			if (indices.Item2 == list.Count)
+			var (_, item2) = GetPossibleIndices(dictionary, key, false, out var list);
+			if (item2 == list.Count)
 				return default(TKey);
 
-			return list[indices.Item2];
+			return list[item2];
 		}
 		public static KeyValuePair<TKey, TValue> CeilingEntry<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key)
 		{
-			List<TKey> list;
-			var indices = GetPossibleIndices(dictionary, key, false, out list);
-			if (indices.Item2 == list.Count)
+			var (_, item2) = GetPossibleIndices(dictionary, key, false, out var list);
+			if (item2 == list.Count)
 				return default(KeyValuePair<TKey, TValue>);
 
-			var newKey = list[indices.Item2];
+			var newKey = list[item2];
 			return new KeyValuePair<TKey, TValue>(newKey, dictionary[newKey]);
 		}
 
 		public static TKey HigherKey<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key)
 		{
-			List<TKey> list;
-			var indices = GetPossibleIndices(dictionary, key, true, out list);
-			if (indices.Item2 == list.Count)
-				return default(TKey);
-
-			return list[indices.Item2];
+			var indices = GetPossibleIndices(dictionary, key, true, out var list);
+			return indices.Item2 == list.Count ? default(TKey) : list[indices.Item2];
 		}
 		public static KeyValuePair<TKey, TValue> HigherEntry<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key)
 		{

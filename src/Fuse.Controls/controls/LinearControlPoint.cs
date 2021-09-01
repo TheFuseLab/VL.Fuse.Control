@@ -28,11 +28,11 @@ namespace Fuse.Controls
                 return myBezierPoint.SampleBezierSegment(myBezierPoint, myBezierPoint.OutHandle, this, this, theTime);
             }
 
-            myLower = theData.getLastOnSamePosition(myLower);
+            myLower = theData.GetLastOnSamePosition(myLower);
             var myHigher = theData.Ceiling(mySample);
 	
             if (theData.Contains(mySample)) {
-                return theData.tailSet(mySample, true).first().value();
+                return theData.TailSet(mySample, true).Min.Value;
             }
 	
             if (myLower == null) {

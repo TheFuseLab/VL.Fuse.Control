@@ -59,7 +59,7 @@ namespace Fuse.controls
 	
 	/*
 	 * Interpolate a color on the gradient
-	 * @param theBlend a value from 0 to 1 that represent the position between the first control point and the last one
+	 * @param theBlend a Value from 0 to 1 that represent the position between the first control point and the Last one
 	 * @return the position
 	 */
 	public Color4 Interpolate (float thePosition){

@@ -12,7 +12,7 @@ namespace Fuse.Controls
         // this function returns the cube root if x were a negative number as well
 	
 	/**
-	 * Returns the cube root of the given value, also for negative x values
+	 * Returns the cube root of the given Value, also for negative x values
 	 */
 	private static double CubeRoot(double theX) {
 		if (theX < 0)

@@ -214,7 +214,7 @@ namespace Fuse.Controls
 	}
 	
 	public override string ToString() {
-		return "type: " + _myType + " time: " + _myTime + " value:" + _myValue;
+		return "type: " + _myType + " time: " + _myTime + " Value:" + _myValue;
 	}
 	
 	
@@ -238,7 +238,7 @@ namespace Fuse.Controls
 	public  static  string CONTROL_POINT_TYPE_ATTRIBUTE = "type";
 
 	protected static  string TIME_ATTRIBUTE = "time";
-	protected static  string VALUE_ATTRIBUTE = "value";
+	protected static  string VALUE_ATTRIBUTE = "Value";
 	protected static  string BLENDABLE_ATTRIBUTE = "blendable";
 	
 	/*
