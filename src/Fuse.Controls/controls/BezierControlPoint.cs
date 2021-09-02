@@ -18,7 +18,7 @@ namespace Fuse.Controls
 	public BezierControlPoint(ControlPoint theControlPoint) : this(theControlPoint.Time, theControlPoint.Value) {
 	}
 
-	public override bool hasHandles() {
+	public override bool HasHandles() {
 		return true;
 	}
 

@@ -60,79 +60,72 @@ namespace Fuse.Controls
 		_myBlendable = theBlendable;
 	}*/
 	
-	public virtual bool hasHandles() {
+	public virtual bool HasHandles() {
 		return false;
 	}
 
 	/**
 	 * @return the _myType
 	 */
-	public ControlPointType getType() {
-		return _myType;
-	}
-
-	/**
-	 * @param myType the _myType to set
-	 */
-	public void setType(ControlPointType theType) {
-		_myType = theType;
+	public ControlPointType Type
+	{
+		get;
+		set;
 	}
 	
-	public ControlPoint getPrevious() {
-		return _myPrevious;
-	}
-	
-	public void setPrevious( ControlPoint thePoint ) {
-		if (thePoint == this) {
-			return;
+	public ControlPoint Previous
+	{
+		get => _myPrevious;
+		set
+		{
+			if (value == null) return;
+			_myPrevious = value;
 		}
-		_myPrevious = thePoint;
 	}
 	
-	public ControlPoint getNext() {
-		return _myNext;
-	}
-	
-	public void setNext( ControlPoint thePoint ) {
-		if (thePoint == this) {
-			return;
+	public ControlPoint Next
+	{
+		get => _myNext;
+		set
+		{
+			if (value == null) return;
+			_myNext = value;
 		}
-		_myNext = thePoint;
 	}
 	
-	public void append( ControlPoint thePoint) {
+	public void Append( ControlPoint thePoint) {
 		if (thePoint == this) {
 			return;
 		}
 		if (thePoint != null) {
-			thePoint.setPrevious(this);
+			thePoint.Previous = this;
 			if (_myNext != null) {
-				_myNext.setPrevious(thePoint);
-				thePoint.setNext(_myNext);
+				_myNext.Previous = thePoint;
+				thePoint.Next = _myNext;
 			}
 		}
 		_myNext = thePoint;
 	}
 	
-	public void prepend( ControlPoint thePoint ) {
+	public void Prepend( ControlPoint thePoint ) {
 		if (thePoint == this) {
 			return;
 		}
 		if (thePoint != null) {
-			thePoint.setNext(this);
+			thePoint.Next = this;
 			if (_myPrevious != null) {
-				_myPrevious.setNext( thePoint );
-				thePoint.setPrevious(_myPrevious);
+				_myPrevious.Next = thePoint;
+				thePoint.Previous = _myPrevious;
 			}
 		}
 		_myPrevious = thePoint;
 	}
 	
-	public bool hasNext() {
+	public bool HasNext() {
 		return _myNext != null;
 	}
 	
-	public bool hasPrevious() {
+	public bool HasPrevious() {
 		return _myPrevious != null;
 	}
 	
@@ -152,13 +145,13 @@ namespace Fuse.Controls
 		set;
 	}
 
-    public float distance(ControlPoint theOtherPoint) {
+    public float Distance(ControlPoint theOtherPoint) {
         var myTimeDistance = Time - theOtherPoint.Time;
         var myValueDistance = Value - theOtherPoint.Value;
         return (float)Math.Sqrt(myTimeDistance*myTimeDistance + myValueDistance*myValueDistance);
     }
 	
-	public bool isPrevious(ControlPoint thePoint) {
+	public bool IsPrevious(ControlPoint thePoint) {
 		if (thePoint.Time > Time) {
 			return true;
 		} else if (thePoint.Time < Time) {
@@ -169,7 +162,7 @@ namespace Fuse.Controls
 			if (myCurrent == thePoint) {
 				return true;
 			}
-			myCurrent = myCurrent.getNext();
+			myCurrent = myCurrent.Next;
 		}
 		return false;
 	}
@@ -185,7 +178,7 @@ namespace Fuse.Controls
 			if (myCurrent == thePoint) {
 				return true;
 			}
-			myCurrent = myCurrent.getPrevious();
+			myCurrent = myCurrent.Previous;
 		}
 		return false;
 	}
@@ -213,19 +206,15 @@ namespace Fuse.Controls
 	}
 	
 	
-	
-	private bool _myIsSelected = false;
 
-	public void setSelected(bool theIsSelected) {
-		_myIsSelected = theIsSelected;
-	}
-	
-	public bool isSelected(){
-		return _myIsSelected;
+	public bool Selected
+	{
+		get;
+		set;
 	}
 
-	public void toggleSelection() {
-		_myIsSelected = !_myIsSelected;
+	public void ToggleSelection() {
+		Selected = !Selected;
 	}
 	
 	protected static  string CONTROLPOINT_ELEMENT = "ControlPoint";

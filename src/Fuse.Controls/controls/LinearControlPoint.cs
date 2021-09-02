@@ -22,8 +22,8 @@ namespace Fuse.Controls
         public override float InterpolateValue(float theTime, AnimationCurve theData) {
             ControlPoint mySample = new StepControlPoint(theTime,0);
             var myLower = theData.Lower(mySample);
-            if(myLower.getType() == ControlPointType.BEZIER) {
-                BezierControlPoint myBezierPoint = (BezierControlPoint)myLower;
+            if(myLower.Type == ControlPointType.BEZIER) {
+                var myBezierPoint = (BezierControlPoint)myLower;
 
                 return myBezierPoint.SampleBezierSegment(myBezierPoint, myBezierPoint.OutHandle, this, this, theTime);
             }
@@ -44,7 +44,7 @@ namespace Fuse.Controls
             }
             var myBlend = (theTime - myLower.Time) / (myHigher.Time - myLower.Time);
             
-            return (float)MathUtil.Lerp(myLower.Value, myHigher.Value, myBlend);
+            return MathUtil.Lerp(myLower.Value, myHigher.Value, myBlend);
 
         }
 

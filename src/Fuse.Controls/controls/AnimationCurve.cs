@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using VL.Lib.Parallel;
 
 namespace Fuse.Controls
 {
@@ -8,9 +9,7 @@ namespace Fuse.Controls
 	{
 		public int Compare(ControlPoint x, ControlPoint y)
 		{
-			if (x.Time == y.Time) return 0;
-			if (x.Time < y.Time) return -1;
-			return 1;
+			return x.Time.CompareTo(y.Time);
 		}
 	}
 	
@@ -53,7 +52,16 @@ namespace Fuse.Controls
 	 */
 	public ControlPoint Floor(ControlPoint thePoint)
 	{
-		return new LinearControlPoint();
+		using var enumerator = GetEnumerator();
+		ControlPoint last = null;
+		while (enumerator.MoveNext())
+		{
+			var current = enumerator.Current;
+			if (current.Time > thePoint.Time) return last;
+			last = current;
+		}
+
+		return null;
 	}
 	
 	/**
@@ -61,7 +69,14 @@ namespace Fuse.Controls
 	 */
 	public ControlPoint Ceiling(ControlPoint thePoint)
 	{
-		return new LinearControlPoint();
+		using var enumerator = GetEnumerator();
+		while (enumerator.MoveNext())
+		{
+			var current = enumerator.Current;
+			if (current.Time >= thePoint.Time) return current;
+		}
+
+		return null;
 	}
 	
 	/**
@@ -69,7 +84,16 @@ namespace Fuse.Controls
 	 */
 	public ControlPoint Lower(ControlPoint thePoint)
 	{
-		return new LinearControlPoint();
+		using var enumerator = GetEnumerator();
+		ControlPoint last = null;
+		while (enumerator.MoveNext())
+		{
+			var current = enumerator.Current;
+			if (current.Time >= thePoint.Time) return last;
+			last = current;
+		}
+
+		return null;
 	}
 	
 	/**
@@ -77,7 +101,14 @@ namespace Fuse.Controls
 	 */
 	public ControlPoint Higher(ControlPoint thePoint)
 	{
-		return new LinearControlPoint();
+		using var enumerator = GetEnumerator();
+		while (enumerator.MoveNext())
+		{
+			var current = enumerator.Current;
+			if (current.Time > thePoint.Time) return current;
+		}
+
+		return null;
 	}
 	
 
@@ -88,7 +119,7 @@ namespace Fuse.Controls
 	 */
 	public SortedSet<ControlPoint> HeadSet(ControlPoint theElement, bool inclusive )
 	{
-		return new SortedSet<ControlPoint>();
+		return GetViewBetween(Min, theElement);
 	}
 
 	/**
@@ -100,7 +131,7 @@ namespace Fuse.Controls
 	 */
 	public SortedSet<ControlPoint> TailSet(ControlPoint theElement, bool inclusive )
 	{
-		return new SortedSet<ControlPoint>();
+		return GetViewBetween(theElement, Max);
 	}
 	
 	/**
@@ -118,12 +149,12 @@ namespace Fuse.Controls
 				_myDirtyFlag = false;
 				return false;
 			}
-			if (thePoint.isPrevious(myTreeLeaf)) {
+			if (thePoint.IsPrevious(myTreeLeaf)) {
 				InsertBefore(myTreeLeaf, thePoint);
 			} else {
 				myTreeLeaf = GetLastOnSamePosition(myTreeLeaf);
 				// do not insert into the tree, just update the float linked list
-				myTreeLeaf.append(thePoint);
+				myTreeLeaf.Append(thePoint);
 			}
 		} else { // new leaf
 			base.Add(thePoint);
@@ -131,10 +162,10 @@ namespace Fuse.Controls
 			var myLower = Lower(thePoint);
 			if (myLower != null) {
 				myLower = GetLastOnSamePosition(myLower);
-				myLower.append(thePoint);
+				myLower.Append(thePoint);
 			}
 			var myHigher = Higher(thePoint);
-			myHigher?.prepend(thePoint);
+			myHigher?.Prepend(thePoint);
 		}
 		return true;
 	}
@@ -161,11 +192,11 @@ namespace Fuse.Controls
 
 		var myTreeLeaf = Floor(thePoint);
 		if(myTreeLeaf == null)return thePoint;
-		while (myTreeLeaf.hasNext()) {
-			if (myTreeLeaf.getNext().Time != thePoint.Time) {
+		while (myTreeLeaf.HasNext()) {
+			if (myTreeLeaf.Next.Time != thePoint.Time) {
 				return myTreeLeaf;
 			} else {
-				myTreeLeaf = myTreeLeaf.getNext();
+				myTreeLeaf = myTreeLeaf.Next;
 			}
 		}
 		return myTreeLeaf;
@@ -232,7 +263,7 @@ namespace Fuse.Controls
 	}
 
 	private void InsertBefore(ControlPoint theLocation, ControlPoint theInsertion) {
-		theLocation.prepend(theInsertion);
+		theLocation.Prepend(theInsertion);
 		// the first element in the float linked list at the same x position
 		// becomes the new tree leaf
 		if (theLocation.Time != theInsertion.Time) return;
@@ -262,7 +293,7 @@ namespace Fuse.Controls
 
 		while (myCurrentPoint != null && myCurrentPoint != myMaxPoint) {
 			myRange.Add(myCurrentPoint);
-			myCurrentPoint = myCurrentPoint.getNext();
+			myCurrentPoint = myCurrentPoint.Next;
 		}
 		myRange.Add(myMaxPoint);
 		return myRange;
@@ -286,8 +317,8 @@ namespace Fuse.Controls
 			myNext.CutLoose();
 			if (myControlPoint != null)
 			{
-				myControlPoint.setNext(myNext);
-				myNext.setPrevious(myControlPoint);
+				myControlPoint.Next = myNext;
+				myNext.Previous = myControlPoint;
 			}
 
 			myCopy.Add(myNext);
@@ -310,7 +341,7 @@ namespace Fuse.Controls
 
 		while (myCurrentPoint != null) {
 			myRange.Add(myCurrentPoint);
-			myCurrentPoint = myCurrentPoint.getNext();
+			myCurrentPoint = myCurrentPoint.Next;
 		}
 		return myRange;
 	}
@@ -321,20 +352,20 @@ namespace Fuse.Controls
 			var myTreeLeaf = Floor(thePoint); // get the tree leaf
 			if (myTreeLeaf == thePoint) { // we are removing the leaf
 				
-				if (myTreeLeaf.hasNext()) { // maybe Add a new leaf
+				if (myTreeLeaf.HasNext()) { // maybe Add a new leaf
 					base.Remove(myTreeLeaf);
-					base.Add(myTreeLeaf.getNext()); // this will replace the old leaf
+					base.Add(myTreeLeaf.Next); // this will replace the old leaf
 				} else {
 					base.Remove(myTreeLeaf);
 				}
 			}
 		}
 		// update float linked list
-		if (thePoint.hasPrevious()) {
-			thePoint.getPrevious().setNext(thePoint.getNext());
+		if (thePoint.HasPrevious()) {
+			thePoint.Previous.Next = thePoint.Next;
 		}
-		if (thePoint.hasNext()) {
-			thePoint.getNext().setPrevious(thePoint.getPrevious());
+		if (thePoint.HasNext()) {
+			thePoint.Next.Previous = thePoint.Previous;
 		}
 		_mySize -= 1;
 		_myDirtyFlag = true;
@@ -362,11 +393,11 @@ namespace Fuse.Controls
 		var myHigher = Higher(myRange[myRange.Count - 1]);
 		if (myLower != null) {
 			myLower = GetLastOnSamePosition(myLower);
-			myLower.setNext(myHigher);
-			myHigher?.setPrevious(myLower);
+			myLower.Next = myHigher;
+			if(myHigher!=null)myHigher.Previous = myLower;
 		} else
 		{
-			myHigher?.setPrevious(null);
+			if(myHigher!=null)myHigher.Previous = null;
 		}
 
 		myRange.ForEach(p => Remove(p));
@@ -409,7 +440,7 @@ namespace Fuse.Controls
 		while (myCurrentPoint != null) {
 			myCurrentPoint.Time = myCurrentPoint.Time + theTime;
 			myTmpList.Add(myCurrentPoint);
-			myCurrentPoint = myCurrentPoint.getNext();
+			myCurrentPoint = myCurrentPoint.Next;
 		}
 	}
 	
@@ -428,7 +459,7 @@ namespace Fuse.Controls
 			myLastTime = myCurrentPoint.Time;
 			myPoint.Value = myCurrentPoint.Value;
 			myTmpList.Add(myPoint);
-			myCurrentPoint = myCurrentPoint.getNext();
+			myCurrentPoint = myCurrentPoint.Next;
 		}
 
 		RemoveAll( theInsertTime + theTime, myLastTime);
@@ -441,7 +472,7 @@ namespace Fuse.Controls
 		var myCurrentPoint = Ceiling(new ControlPoint(theMaxValue, 0));
 		while (myCurrentPoint != null) {
 			this.Move(myCurrentPoint, new ControlPoint(myCurrentPoint.Time - myRange, myCurrentPoint.Value));
-			myCurrentPoint = myCurrentPoint.getNext();
+			myCurrentPoint = myCurrentPoint.Next;
 		}
 	}
 	
@@ -454,7 +485,7 @@ namespace Fuse.Controls
 		var myCurrentPoint = Ceiling(new ControlPoint(theEndTime, 0));
 		while (myCurrentPoint != null) {
 			Move(myCurrentPoint, new ControlPoint(myCurrentPoint.Time + myMoveRange, myCurrentPoint.Value));
-			myCurrentPoint = myCurrentPoint.getNext();
+			myCurrentPoint = myCurrentPoint.Next;
 		}
 		
 		var myRange = RangeList(theStartTime, theEndTime);
@@ -471,7 +502,7 @@ namespace Fuse.Controls
 			if (myCurrentPoint == null) return;
 			
 			Move(myCurrentPoint, new ControlPoint(myCurrentPoint.Time + myMoveRange, myCurrentPoint.Value));
-			myCurrentPoint = myCurrentPoint.getNext();
+			myCurrentPoint = myCurrentPoint.Next;
 		});
 	}
 
@@ -495,7 +526,7 @@ namespace Fuse.Controls
 			var myEndMove = theEndTime2 - theEndTime1;
 			while (myCurrentPoint != null) {
 				Move(myCurrentPoint, new ControlPoint(myCurrentPoint.Time + myEndMove, myCurrentPoint.Value));
-				myCurrentPoint = myCurrentPoint.getNext();
+				myCurrentPoint = myCurrentPoint.Next;
 			}
 			
 			//Move points at the start
@@ -503,7 +534,7 @@ namespace Fuse.Controls
 			var myStartMove = theStartTime2 - theStartTime1;
 			while (myCurrentPoint != null) {
 				Move(myCurrentPoint, new ControlPoint(myCurrentPoint.Time + myStartMove, myCurrentPoint.Value));
-				myCurrentPoint = myCurrentPoint.getPrevious();
+				myCurrentPoint = myCurrentPoint.Previous;
 			}
 			
 			var myRange = RangeList(theStartTime1, theEndTime1);
@@ -512,7 +543,7 @@ namespace Fuse.Controls
 			{
 				var myNewTime = Map(myControlPoint.Time, theStartTime1, theEndTime1, theStartTime2, theEndTime2);
 				Move(myControlPoint, new ControlPoint(myNewTime, myControlPoint.Value));
-				myControlPoint = myControlPoint.getNext();
+				myControlPoint = myControlPoint.Next;
 			});
 		}else{
 			var myRange = RangeList(theStartTime1, theEndTime1);
@@ -521,7 +552,7 @@ namespace Fuse.Controls
 			{
 				var myNewTime = Map(myControlPoint.Time, theStartTime1, theEndTime1, theStartTime2, theEndTime2);
 				Move(myControlPoint, new ControlPoint(myNewTime, myControlPoint.Value));
-				myControlPoint = myControlPoint.getNext();
+				myControlPoint = myControlPoint.Next;
 			});
 			
 			//Move points at the end
@@ -529,7 +560,7 @@ namespace Fuse.Controls
 			var myEndMove = theEndTime2 - theEndTime1;
 			while (myCurrentPoint != null) {
 				Move(myCurrentPoint, new ControlPoint(myCurrentPoint.Time + myEndMove, myCurrentPoint.Value));
-				myCurrentPoint = myCurrentPoint.getNext();
+				myCurrentPoint = myCurrentPoint.Next;
 			}
 			
 			//Move points at the start
@@ -537,7 +568,7 @@ namespace Fuse.Controls
 			var myStartMove = theStartTime2 - theStartTime1;
 			while (myCurrentPoint != null) {
 				Move(myCurrentPoint, new ControlPoint(myCurrentPoint.Time + myStartMove, myCurrentPoint.Value));
-				myCurrentPoint = myCurrentPoint.getPrevious();
+				myCurrentPoint = myCurrentPoint.Previous;
 			}
 		}
 		
