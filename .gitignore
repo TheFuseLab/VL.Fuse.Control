@@ -21,3 +21,4 @@
 /src/Fuse.Controls/obj/project.nuget.cache
 /src/Fuse.Controls/.vs/*
 /src/Fuse.Controls/obj/*
+*.vl.dll
