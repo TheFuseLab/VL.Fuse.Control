@@ -137,9 +137,12 @@
               <Pin Id="T3sLaZfRED9O75xbMqnslG" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="365,216,123,26" Id="R6BdyIRatqmPPgeM0IINWV">
-              <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+              <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetResampleResolution" />
+                <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true">
+                  <p:OuterCategoryReference Kind="Category" Name="Gradient" NeedsToBeDirectParent="true" />
+                </CategoryReference>
               </p:NodeReference>
               <Pin Id="RCGHdqaC2BnMOGMY597jTR" Name="Input" Kind="StateInputPin" />
               <Pin Id="UKKOpXaF8zhPFOJeNml78k" Name="Output" Kind="StateOutputPin" />
@@ -181,9 +184,12 @@
                   <Pin Id="JKlydLCpwDPPF2AN26FNMY" Name="Output" Kind="StateOutputPin" />
                 </Node>
                 <Node Bounds="231,361,67,26" Id="D7lG1sXm3KBQKUrKfyZmhh">
-                  <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                  <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="GetTexture" />
+                    <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true">
+                      <p:OuterCategoryReference Kind="Category" Name="Gradient" NeedsToBeDirectParent="true" />
+                    </CategoryReference>
                   </p:NodeReference>
                   <Pin Id="EUQBUQXwhqrOtNkyvkcDp4" Name="Input" Kind="StateInputPin" />
                   <Pin Id="PKtige9N7bwPcW3XO1OzZk" Name="Output" Kind="StateOutputPin" />
