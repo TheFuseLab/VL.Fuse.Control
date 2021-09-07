@@ -260,7 +260,7 @@
               </p:NodeReference>
               <Pin Id="AHbzf3eBeO3LTkBiSuaWRC" Name="Input" Kind="StateInputPin" />
               <Pin Id="SKARxfIOXYvLTB2Il10X1b" Name="Output" Kind="StateOutputPin" />
-              <Pin Id="FKiHkpXGeNQLrTqFdcUlBR" Name="Gradient Colors" Kind="OutputPin" />
+              <Pin Id="FKiHkpXGeNQLrTqFdcUlBR" Name="Colors" Kind="OutputPin" />
             </Node>
           </Canvas>
           <ProcessDefinition Id="QERkSCoZuGiN87Tsxp9d6E">
