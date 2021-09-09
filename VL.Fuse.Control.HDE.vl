@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="OSEmF9DUuBpLUSPXzg7wU0" LanguageVersion="2021.4.0.365" Version="0.128">
-  <NugetDependency Id="P4PxpMOZlilOAXTCzy1Hw5" Location="VL.CoreLib" Version="2021.4.0-0365-g698d9b47a2" />
+<Document xmlns:p="property" Id="OSEmF9DUuBpLUSPXzg7wU0" LanguageVersion="2021.4.0.366" Version="0.128">
+  <NugetDependency Id="P4PxpMOZlilOAXTCzy1Hw5" Location="VL.CoreLib" Version="2021.4.0-0366-gc15693d0df" />
   <Patch Id="LfOpSjdojGdPVxGBN42Bkw">
     <Canvas Id="EbwbcQ7EZcGNqQF4VrWCpy" DefaultCategory="Fuse.Control.HDE" CanvasType="FullCategory">
       <!--
@@ -27,7 +27,7 @@
               <Pin Id="T7EWeKnHhFYMHFoFLKyUSt" Name="Result" Kind="OutputPin" />
               <ControlPoint Id="DhNBqNRa3PkNgixzyKmVI3" Bounds="297,492" />
               <Node Bounds="295,431,80,26" Id="AUywtOEFvg3NAcwDr5Zcpy">
-                <p:NodeReference>
+                <p:NodeReference LastCategoryFullName="Fuse.Control.HDE.GradientViewer" LastSymbolSource="VL.Fuse.Control.HDE.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="Create" />
                   <CategoryReference Kind="ClassType" Name="GradientViewer" NeedsToBeDirectParent="true" />
@@ -69,7 +69,7 @@
     ************************ GradientViewer ************************
 
 -->
-      <Node Name="GradientViewer" Bounds="202,162" Id="VxcXffxGU0bPgFiBBWMlIY">
+      <Node Name="GradientViewer" Aspects="Internal" Bounds="202,162" Id="VxcXffxGU0bPgFiBBWMlIY">
         <p:NodeReference>
           <Choice Kind="ClassDefinition" Name="Class" />
           <FullNameCategoryReference ID="Primitive" />
@@ -263,7 +263,7 @@
               <Pin Id="FKiHkpXGeNQLrTqFdcUlBR" Name="Colors" Kind="OutputPin" />
             </Node>
           </Canvas>
-          <ProcessDefinition Id="QERkSCoZuGiN87Tsxp9d6E">
+          <ProcessDefinition Aspects="Internal" Id="QERkSCoZuGiN87Tsxp9d6E">
             <Fragment Id="MeGCAHgKMZ2NuuAXJxACuJ" Patch="T0rBwOKHu3WL4ixzY47gIF" Enabled="true" />
             <Fragment Id="KgkHACgt28QLvJrm64xdOt" Patch="GUhr2lJJGreLNTF8tkYuxk" Enabled="true" />
           </ProcessDefinition>
@@ -310,7 +310,7 @@
     ************************ Envelope1DViewer ************************
 
 -->
-      <Node Name="Envelope1DViewer" Bounds="202,222" Id="Uemex5uGZhOMlpl79xU0Bt">
+      <Node Name="Envelope1DViewer" Aspects="Internal" Bounds="202,222" Id="Uemex5uGZhOMlpl79xU0Bt">
         <p:NodeReference>
           <Choice Kind="ClassDefinition" Name="Class" />
           <FullNameCategoryReference ID="Primitive" />
@@ -323,9 +323,9 @@
         <Patch Id="UAFIFA5bakwO3ppEWrUrk3">
           <Canvas Id="VzM8Jp7nug9OOWKIKPY52P" CanvasType="Group">
             <ControlPoint Id="M8zDr0qNJyNQWh2caWdU6d" Bounds="568,130" />
-            <ControlPoint Id="P4TTl2HBNfpNj5WJjG3X3h" Bounds="212,1081" />
+            <ControlPoint Id="P4TTl2HBNfpNj5WJjG3X3h" Bounds="209,1122" />
             <Node Bounds="566,156,91,26" Id="DN8YF20gcpoM9fWY6riMuJ">
-              <p:NodeReference LastCategoryFullName="Fuse.Control.Envelope.Envelope1D" LastSymbolSource="VL.Fuse.Control.vl">
+              <p:NodeReference LastCategoryFullName="Fuse.Control.Envelope1D" LastSymbolSource="VL.Fuse.Control.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetModelStream" />
                 <CategoryReference Kind="ClassType" Name="Envelope1D" NeedsToBeDirectParent="true" />
@@ -366,10 +366,9 @@
                 <Patch Id="UZ3ks8VFjATOGnoQqxjyQj" Name="Create" ManuallySortedPins="true" />
                 <Patch Id="PEOZZjTZCB6MnqnDbBtQrd" Name="Then" ManuallySortedPins="true" />
                 <Node Bounds="652,365,23,19" Id="HTmtg3mUOoGMh9xD0nRtcp">
-                  <p:NodeReference>
+                  <p:NodeReference LastCategoryFullName="Fuse.Control.Envelope1D" LastSymbolSource="VL.Fuse.Control.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="DrawEnvelope1D" />
-                    <CategoryReference Kind="Category" Name="Envelope1D" NeedsToBeDirectParent="true" />
                   </p:NodeReference>
                   <Pin Id="Q2hwDgJohbrMzhY8x5JgeD" Name="Gradient Points" Kind="InputPin" />
                   <Pin Id="FyrUnXDiLdXLNQ8XoXtojV" Name="Domain From" Kind="InputPin" />
@@ -565,10 +564,9 @@
                       <Pin Id="CflJMdAn9sKOGPzwHqlqh1" Name="Interpolation Model" Kind="OutputPin" />
                     </Node>
                     <Node Bounds="871,560,56,19" Id="KLRKBfhM4R2OYHEwYDxzCq">
-                      <p:NodeReference LastCategoryFullName="Fuse.Control.Utils" LastSymbolSource="VL.Fuse.Control.vl">
+                      <p:NodeReference LastCategoryFullName="Fuse.Control.Util" LastSymbolSource="VL.Fuse.Control.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="OperationCallFlag" Name="UVToPos" />
-                        <CategoryReference Kind="Category" Name="Utils" NeedsToBeDirectParent="true" />
                       </p:NodeReference>
                       <Pin Id="RTpz9z2EyYNL7mn8DvhH3j" Name="UV Coords" Kind="InputPin" />
                       <Pin Id="Ate703Ruhe8NvszenQGKEQ" Name="Rectangle" Kind="InputPin" />
@@ -688,7 +686,7 @@
               </p:TypeAnnotation>
             </Pad>
           </Canvas>
-          <ProcessDefinition Id="DMRGKRc6jm7M2zgVDTJRWE">
+          <ProcessDefinition Aspects="Internal" Id="DMRGKRc6jm7M2zgVDTJRWE">
             <Fragment Id="DGdOrgcMrvaPyJ6Ewe88XN" Patch="LrK3imWxm4FMhfHglxL8GH" Enabled="true" />
             <Fragment Id="EChJb2RozNGPv1Bi077oug" Patch="DuDDjuBuMILOq3pKZHnW11" Enabled="true" />
           </ProcessDefinition>
@@ -782,8 +780,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Q3X2h85GTcQP08LU7SaRtb" Location="VL.Skia" Version="2021.4.0-0365-g698d9b47a2" />
-  <NugetDependency Id="MibcgQ7kvQVNk57jLpWm6M" Location="VL.HDE" Version="2021.4.0-0365-g698d9b47a2" />
-  <DocumentDependency Id="Mi2G9W9eiWIPZOCkWxxYpp" Location="./VL.Fuse.Control.vl" />
-  <NugetDependency Id="My6NuQrW9ieN0iWpZ3muno" Location="VL.Stride" Version="2021.4.0-0365-g698d9b47a2" />
+  <NugetDependency Id="Q3X2h85GTcQP08LU7SaRtb" Location="VL.Skia" Version="2021.4.0-0366-gc15693d0df" />
+  <NugetDependency Id="MibcgQ7kvQVNk57jLpWm6M" Location="VL.HDE" Version="2021.4.0-0366-gc15693d0df" />
+  <DocumentDependency Id="Mi2G9W9eiWIPZOCkWxxYpp" Location="./VL.Fuse.Control.vl" IsFriend="true" />
+  <NugetDependency Id="My6NuQrW9ieN0iWpZ3muno" Location="VL.Stride" Version="2021.4.0-0366-gc15693d0df" />
 </Document>
