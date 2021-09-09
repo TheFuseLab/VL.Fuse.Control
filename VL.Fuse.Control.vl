@@ -13261,7 +13261,6 @@
     </Node>
   </Patch>
   <NugetDependency Id="JIV3rbmhYTbLjcGoNyxur7" Location="VL.CoreLib" Version="2021.4.0-0366-gc15693d0df" />
-  <PlatformDependency Id="KiJiXALeUawN7DgqUUr7ub" Location="./src/Fuse.Controls/obj/Debug/net472/Fuse.Controls.dll" />
   <NugetDependency Id="KCo8njLLjYxQO6s0f2VBZ4" Location="VL.Inspector" IsForward="true" Version="0.0.0.0" />
   <NugetDependency Id="CW7fba4yIA1MUIiXuGWtiO" Location="VL.Skia" Version="2021.4.0-0366-gc15693d0df" />
   <NugetDependency Id="Vx71ZoTu3L8ObcjGJDQo15" Location="VL.Elementa" Version="0.0.0.0" />
