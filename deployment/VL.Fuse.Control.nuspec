@@ -12,7 +12,8 @@
     <description>Fuse control features</description>
     <tags>VL</tags>
     <dependencies>
-      <dependency id="VL.Inspector" version="1.0.0" />
+      <dependency id="VL.Inspector"/>
+      <dependency id="VL.LerpX"/>
     </dependencies>
   </metadata>
   <files>
