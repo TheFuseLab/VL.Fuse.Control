@@ -33,17 +33,7 @@
               <Choice Kind="ProcessAppFlag" Name="Gradient" />
             </p:NodeReference>
             <Pin Id="GajtKW81TTLNyWFzImfWVu" Name="Model" Kind="InputPin">
-              <p:DefaultValue xmlns:r="reflection" r:Version="2">
-                <Alpha_Points>
-                  <Item ID="8eb64433-35d9-4beb-ad63-bdeb19967c74" Position="0.2959183" Value="1" />
-                  <Item ID="926e4b00-de59-43dd-98f2-321242a59f0d" Position="0.4350649" Value="0.5666666" />
-                  <Item ID="e93adb5d-3581-415e-9ab1-0d8b9fc52629" Position="0.7959183" Value="1" />
-                </Alpha_Points>
-                <Color_Points>
-                  <Item ID="06395fc7-bc72-4449-99fd-fba867efbdd0" Value="1, 0, 0, 1" />
-                  <Item ID="71f94123-73c7-4f93-aa16-3811e9b88440" Position="1" Value="0, 1, 0.8888884, 1" />
-                </Color_Points>
-              </p:DefaultValue>
+              <p:DefaultValue />
             </Pin>
             <Pin Id="Ofy6QYrxlvrLMtXHWgOJ4Q" Name="Output Resolution" Kind="InputPin" />
             <Pin Id="BPd2SuZAVwJN0wrFZpgOrs" Name="Output" Kind="StateOutputPin" />

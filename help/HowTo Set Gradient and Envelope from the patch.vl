@@ -86,7 +86,9 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Gradient" />
             </p:NodeReference>
-            <Pin Id="Djgze184fq8LBI3iZ3HQD2" Name="Model" Kind="InputPin" />
+            <Pin Id="Djgze184fq8LBI3iZ3HQD2" Name="Model" Kind="InputPin">
+              <p:DefaultValue />
+            </Pin>
             <Pin Id="HHk9Y8wFgciLhzmJk9fF78" Name="Output Resolution" Kind="InputPin" />
             <Pin Id="OtyKUqkJ74ZOZwZJ007SUW" Name="Output" Kind="OutputPin" />
             <Pin Id="NSiLsJol30aNxwAhQEsq4w" Name="Texture" Kind="OutputPin" />
