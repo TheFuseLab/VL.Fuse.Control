@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="J4xEgnclzkHPdHll4rZevD" LanguageVersion="2021.4.0.366" Version="0.128">
-  <NugetDependency Id="MQvBcTkXPFsQEVIM9c1bXh" Location="VL.CoreLib" Version="2021.4.0-0366-gc15693d0df" />
+<Document xmlns:p="property" Id="J4xEgnclzkHPdHll4rZevD" LanguageVersion="2021.4.0.413" Version="0.128">
+  <NugetDependency Id="MQvBcTkXPFsQEVIM9c1bXh" Location="VL.CoreLib" Version="2021.4.0-0413-gaf9ffdce60" />
   <Patch Id="DxyjDd2w0k5NSdYi5guplD">
     <Canvas Id="EvX6v39Xlf0MBoPosH38Ni" DefaultCategory="Fuse.Control" CanvasType="FullCategory">
       <!--
@@ -166,17 +166,17 @@
             <Patch Id="NawvgDyVAj3PkCIEeINShg" Name="Create" ManuallySortedPins="true">
               <Pin Id="OSLmRS8XHp9PnDsWymdCVe" Name="Input" Kind="InputPin">
                 <p:TypeAnnotation>
-                  <Choice Kind="TypeFlag" Name="Gradient" />
+                  <Choice Kind="TypeFlag" Name="Gradient1D" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="KYNFzJ6mKz9MERiUjcMPaV" Name="Result" Kind="OutputPin" />
               <ControlPoint Id="BlxT1ElrDY2LIdRw0lQP6a" Bounds="400,878" />
               <ControlPoint Id="TbGJI7sJ6LkPyVNU6MYwbz" Bounds="400,958" />
               <Node Bounds="398,907,68,26" Id="UI4qnkfSHW0LgDfbmpNtZH">
-                <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient.GradientEditor" LastSymbolSource="VL.Fuse.Control.vl">
+                <p:NodeReference>
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="Create" />
-                  <CategoryReference Kind="ClassType" Name="GradientEditor" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="ClassType" Name="Gradient1DEditor" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="G11iurN12uKQap353S8Mdp" Name="Output" Kind="StateOutputPin" />
               </Node>
@@ -1924,13 +1924,13 @@
           <Link Id="Ru5xVypD2KFNYpdtYeuMmx" Ids="HFsaItR8ZWHLDFiD0cZnGb,JZDVU62El6hLV3KFa0eTXp" IsHidden="true" />
         </Patch>
       </Node>
-      <Canvas Id="Rb2rWZlNhYlPwFXRHzJHcU" Name="Gradient.Internal" Position="605,590">
+      <Canvas Id="Rb2rWZlNhYlPwFXRHzJHcU" Name="Gradient1D.Internal" Position="605,590">
         <!--
 
-    ************************ GradientEditor ************************
+    ************************ Gradient1DEditor ************************
 
 -->
-        <Node Name="GradientEditor" Bounds="207,297" Id="EmgjHLY6lM1QUTKikyupSb">
+        <Node Name="Gradient1DEditor" Bounds="207,297" Id="EmgjHLY6lM1QUTKikyupSb">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="ClassDefinition" Name="Class" />
           </p:NodeReference>
@@ -1955,10 +1955,10 @@
                 <Pin Id="VndbN8gKkDNNEW2O2IhXYr" Name="Success" Kind="OutputPin" />
               </Node>
               <Node Bounds="246,733,125,19" Id="VSYSrZgdilRPMmdHBz290K">
-                <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="ControlPointBar" />
-                  <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="NW6eUCEKilWMQmKfLZmbhT" Name="Gradient Points Getter" Kind="InputPin" />
                 <Pin Id="CGOhBJ1vAsiMCJ7X6drJcd" Name="Gradient Points Setter" Kind="InputPin" />
@@ -2089,10 +2089,10 @@
                 </p:TypeAnnotation>
               </Pad>
               <Node Bounds="1194,733,214,19" Id="AYr0J9macTRL8WsxgFeYlb">
-                <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="ControlPointBar" />
-                  <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="HCbQkMXF8CMODmLYOSqwpr" Name="Gradient Points Getter" Kind="InputPin" />
                 <Pin Id="VC3j1YzeLAULFfy05t42ai" Name="Gradient Points Setter" Kind="InputPin" />
@@ -2118,7 +2118,7 @@
                 <Pin Id="SUdCFR9h1nhPMyY0u0aeoF" Name="Y" Kind="InputPin" />
                 <Pin Id="UzM7KfdNdmVLzkkQJS2LO4" Name="Output" Kind="StateOutputPin" />
               </Node>
-              <Pad Id="KNoPYwiOrSKPM4AXV4M9c3" Comment="Y" Bounds="834,600,35,15" ShowValueBox="true" isIOBox="true" Value="0.48">
+              <Pad Id="KNoPYwiOrSKPM4AXV4M9c3" Comment="Y" Bounds="834,600,35,15" ShowValueBox="true" isIOBox="true" Value="0.5">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="Float32" />
                 </p:TypeAnnotation>
@@ -2543,20 +2543,20 @@
                     </p:TypeAnnotation>
                   </Pad>
                   <Node Bounds="1685,679,111,19" Id="AbbXUYK9sFkLqGsyFDReHJ">
-                    <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                    <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="ProcessAppFlag" Name="PositionManipulation" />
-                      <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="HIzHzvIWdTENFaoELQlmky" Name="Input" Kind="InputPin" />
                     <Pin Id="VyIHxZbJMEQNlyrWF3Wfx6" Name="Gradient" Kind="InputPin" />
                     <Pin Id="KJZ75ECHijlNAFXP1vFEfd" Name="Output" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="2362,679,161,19" Id="DPRf6KV061ZOA9e3Za4ngv">
-                    <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                    <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="ProcessAppFlag" Name="InterpolationModelManipulation" />
-                      <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="RgcmRLkyGCrMtedkvjjEpx" Name="Input" Kind="InputPin" />
                     <Pin Id="UseXtVYro7QOySz2u5oT2R" Name="Gradient" Kind="InputPin" />
@@ -2677,17 +2677,6 @@
                     <Pin Id="IXyGFRGzoDLMpTKXBSrRw7" Name="Rectangle" Kind="InputPin" />
                     <Pin Id="HXNgt8eF7MDPcB2PFAe7Hv" Name="Point" Kind="InputPin" />
                     <Pin Id="MPJWFtWR5clPfTkPdBWoNT" Name="Result" Kind="OutputPin" />
-                  </Node>
-                  <Node Bounds="955,1828,37,19" Id="CmiaFRfR7YDP2A0GUUpToZ">
-                    <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="CoreLibBasics.vl">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="NOT" />
-                      <CategoryReference Kind="BooleanType" Name="Boolean" NeedsToBeDirectParent="true">
-                        <p:OuterCategoryReference Kind="Category" Name="Primitive" NeedsToBeDirectParent="true" />
-                      </CategoryReference>
-                    </p:NodeReference>
-                    <Pin Id="UnlRaoIR7zPLpjTMrSzjcB" Name="Input" Kind="StateInputPin" />
-                    <Pin Id="QN5g89WxljGLvCbQG0JGbn" Name="Output" Kind="StateOutputPin" />
                   </Node>
                 </Patch>
               </Node>
@@ -2900,8 +2889,8 @@
             <Link Id="Ae0xrUwWdkHNAsKo9axw5J" Ids="DS2xjQMGhMENSG5E0Yz363,CGOhBJ1vAsiMCJ7X6drJcd" />
             <Link Id="A7rDOruU9zVLHRzGkiQq1H" Ids="Dik2qHJMepPOCwxjRMYbK7,U65FNenCYnRLKJJL70Bj6w" />
             <Link Id="QxrM2dh9TYqN0eGNcP2EvH" Ids="RWMSZ9sL33PQNja2DTR1k4,D93TB5RkLKkNxDySQpevTL" />
-            <Patch Id="BYJbQ7fv0QEPSKvjfx379P" Name="Create" ParticipatingElements="C6wqoAC9EhBP3ySexzzc6G,VvBfpAbtTtPNeVo53ddtli,Gt6TZulnVkmOMFLhSpIulk,Lai8hxHacIpLxwSbi11jG1,LeBMTDqfI6bMXKUhd2v1xl,KGNhHP1FtAINoEH6UFrWoU,CQ33cVoYdRWNuO0xO3BPi6,EiZF4hReNjgLSNAO1Md12r,MnbGUWk3zbnPiaINVDYmQ1,BuzMvZ5tGiqM6DdZIJAFin,TYhh5uTC5NlPEKScbtgaVO,DkLe9GqpocIMecpcK2XAEg,JLyHnJEEpzPQZjNAFTcpe7" />
-            <Patch Id="TdvdSNl6ABiOZnZ2kCQvBP" Name="Update" ParticipatingElements="B0mVfutTRmeQbkcyViIL0A">
+            <Patch Id="BYJbQ7fv0QEPSKvjfx379P" Name="Create" ParticipatingElements="VvBfpAbtTtPNeVo53ddtli,Gt6TZulnVkmOMFLhSpIulk,Lai8hxHacIpLxwSbi11jG1,LeBMTDqfI6bMXKUhd2v1xl,KGNhHP1FtAINoEH6UFrWoU,EiZF4hReNjgLSNAO1Md12r,MnbGUWk3zbnPiaINVDYmQ1,BuzMvZ5tGiqM6DdZIJAFin,TYhh5uTC5NlPEKScbtgaVO,DkLe9GqpocIMecpcK2XAEg,JLyHnJEEpzPQZjNAFTcpe7,CQ33cVoYdRWNuO0xO3BPi6" />
+            <Patch Id="TdvdSNl6ABiOZnZ2kCQvBP" Name="Update" ParticipatingElements="C6wqoAC9EhBP3ySexzzc6G,B0mVfutTRmeQbkcyViIL0A">
               <Pin Id="N4FDWiTG9W8ODLPRfBDXWS" MergeId="434691" Name="Value" Kind="InputPin" />
               <Pin Id="N08Xp5pnCRwOwOIMCMpSLp" Name="Bounds" Kind="InputPin" />
               <Pin Id="GSmVsqMSYauO36XArN2mBn" MergeId="434693" Name="Layer" Kind="OutputPin" />
@@ -2951,7 +2940,6 @@
             <Link Id="DqAx6H0BZ34Mm8GjOA64VV" Ids="Gdhb3phcMDQMIKD6RPMkpl,KQrqND5BOjzPp5DUHHWDMJ" />
             <Link Id="SHHl2sFq95IM6CrOuF7FNz" Ids="Ne3i3cg1iAgNi5Kwzv3tpP,HcmbtCmHm14OuvQ6rRUv8c" />
             <Link Id="DSltzcXvReMNsRpVGs7SNZ" Ids="T1R5c16Wlo7Oqdi9QFXAIs,EipOI97XLTwOAX5FOBH2Yv" />
-            <Link Id="HgEPHTds2EmMpEIXLUwjGf" Ids="R2kQEfPI1jvP1yKDheinaH,DSEyNctz0jJPJezXO6hkI1" />
             <Link Id="QjzuIjIKAWrOzctmD3vtgQ" Ids="Ne3i3cg1iAgNi5Kwzv3tpP,Ug1tsqY6EBPODpEA5UPh5h" />
             <Link Id="KHYNrT6D06JMGXMdMbw0fA" Ids="Nu9lJCtg0hxO7fuDO3PPGk,VAekq3Hov8wPPYpwxFt05t" />
             <Link Id="Vy7AM68lOoLLLbmRrlnP1P" Ids="HCqgrW3dL4AM4j8KZeGlWK,V10drNPPyahNN1LXm7GFMr" IsHidden="true" />
@@ -2965,7 +2953,6 @@
             <Link Id="C0vXfUXKzKoNNWRFj6zmCi" Ids="V10drNPPyahNN1LXm7GFMr,UWKzmdjRvvaLD36DahYXMw" />
             <Link Id="FfA2FpvMX2oLKzcOHD5Pro" Ids="REWojVKjdhmPLYCe3nasrv,BFaNhl4yNYtOqJzQ79dAhz" />
             <Link Id="M0cpe6RKz96NflSUofcsIG" Ids="T2ZOsqHiX41PISvIJ3reDk,IXyGFRGzoDLMpTKXBSrRw7" />
-            <Link Id="M242AxcGOTHNrCnMSPOmEJ" Ids="MPJWFtWR5clPfTkPdBWoNT,UnlRaoIR7zPLpjTMrSzjcB" />
             <Link Id="NLbvceG1JwFLPDuBkLfMzu" Ids="CLc6E4SHHBKMbKNGPznHtZ,HXNgt8eF7MDPcB2PFAe7Hv" />
             <Link Id="EjpaiiDilqkPKgnRXCT4Ic" Ids="Qveehnt1jA6PaTPnuXSwwx,IeqafUgLLycLqm3bKUb2GD" />
             <Link Id="GRLlGUfzetWPVSLUbNRk1V" Ids="Mir59AVkDNtOZsJXWyzRpA,IMrA3LmOQTbM4IXIitJT1a" />
@@ -3005,6 +2992,7 @@
             <Link Id="JLyHnJEEpzPQZjNAFTcpe7" Ids="V3a6e0D5EPtQdSr98kcxPj,BynG4Ti12WIL9nSK7y1r8A" />
             <Link Id="TRsFE4s6dBrMdqQnastMQh" Ids="MQW3qR8MmevLM3tZodUspf,ANT4sLJqMVkMwiPUKTnTRS" />
             <Link Id="BasAFTBsztBPp4LdVll31J" Ids="M0bEiV6qxaBOLTMi9t5gUv,FswNz8zMyDzNEzOAw7fBxS" />
+            <Link Id="KisbyagKT8KN0VtBfOoWqs" Ids="R2kQEfPI1jvP1yKDheinaH,DSEyNctz0jJPJezXO6hkI1" />
           </Patch>
         </Node>
         <!--
@@ -3023,7 +3011,7 @@
                 <p:NodeReference>
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                  <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="K6YThiZKpL8Nk7yA5dNXqN" Name="Input" Kind="StateInputPin" />
                 <Pin Id="DIspdEBZyk7LOZZUyxalzB" Name="Output" Kind="StateOutputPin" />
@@ -3056,9 +3044,9 @@
                   <Patch Id="SQbmtrX1Ty9L3Wt64k9LNi" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="AyQCHLxYXA1PqooA3nxKr8" Name="Then" ManuallySortedPins="true" />
                   <Node Bounds="594,-12,84,26" Id="TxwnNilLWi7NyHK2Dn3HNr">
-                    <p:NodeReference LastCategoryFullName="Fuse.Control.GradientModel" LastSymbolSource="VL.Fuse.Control.vl">
+                    <p:NodeReference>
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="RecordType" Name="GradientModel" />
+                      <CategoryReference Kind="RecordType" Name="Gradient1DModel" />
                       <Choice Kind="OperationCallFlag" Name="GetColorPoints" />
                     </p:NodeReference>
                     <Pin Id="EYS3uKbUk5XQb2qD1ab0GI" Name="Input" Kind="StateInputPin" />
@@ -3216,9 +3204,9 @@
                             <Pin Id="PXdauzHT4agPLtV2zgaDVt" Name="Output" Kind="OutputPin" />
                           </Node>
                           <Node Bounds="1540,519,84,26" Id="B2MaqF4zybxMSwUG0e1uwx">
-                            <p:NodeReference LastCategoryFullName="Fuse.Control.GradientModel" LastSymbolSource="VL.Fuse.Control.vl">
+                            <p:NodeReference>
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                              <CategoryReference Kind="RecordType" Name="GradientModel" />
+                              <CategoryReference Kind="RecordType" Name="Gradient1DModel" />
                               <Choice Kind="OperationCallFlag" Name="GetColorPoints" />
                             </p:NodeReference>
                             <Pin Id="R0CH5whdnf9L7bo4HvpGzk" Name="Input" Kind="StateInputPin" />
@@ -3547,7 +3535,7 @@
                 <p:NodeReference>
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                  <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="EPO2l310qzxLQaWpk5xnTa" Name="Input" Kind="StateInputPin" />
                 <Pin Id="QdBPcOg3yi0PbR3RDrcw9s" Name="Output" Kind="StateOutputPin" />
@@ -5529,10 +5517,10 @@
               <Pad Id="GuQudLegRRhML0rLWw0FCQ" SlotId="Hiufve7Y5xPOBtjOxmEUlL" Bounds="370,826" />
               <Pad Id="M8ne5XIKNrWOH9eoshX0kY" Bounds="138,737" />
               <Node Bounds="365,179,123,26" Id="AUsxFhUhJ2wMkkDWYhYz6X">
-                <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                <p:NodeReference>
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="GetOutputResolution" />
-                  <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="OaLahG6msjpN668tachaIL" Name="Input" Kind="StateInputPin" />
                 <Pin Id="Me7lRG6a0CoOq0RyNa9M9M" Name="Output" Kind="StateOutputPin" />
@@ -5575,10 +5563,10 @@
                     <Pin Id="NyoCzQ5swjdMhk3oiFadxe" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="231,324,67,26" Id="LSliLZLmwzSLoAIb8dzLeG">
-                    <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                    <p:NodeReference>
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="GetTexture" />
-                      <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="CU4nJommUUoOSKuIy8xS6e" Name="Input" Kind="StateInputPin" />
                     <Pin Id="Ki8bdyG7tz5LgTVxj2EtgX" Name="Output" Kind="StateOutputPin" />
@@ -5866,10 +5854,10 @@
                     <Pin Id="A0Up7rabedhNdqR82oQvFO" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="439,290,76,19" Id="LvCarxNuF6nMAccMunSdPw">
-                    <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                    <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="FindLivePoint" />
-                      <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="Nj1b7w4XTMEQHWxBA3ofO6" Name="Gradient" Kind="InputPin" />
                     <Pin Id="S2SPeh5SpTqLmONr8v58QG" Name="Point" Kind="InputPin" />
@@ -6016,10 +6004,10 @@
                             <ControlPoint Id="KSBvXkaecFwLk4UqGTqBBa" Bounds="614,1012" Alignment="Bottom" />
                           </Node>
                           <Node Bounds="480,1043,93,19" Id="DoQXCs86nyZPAEBIR3L3ik">
-                            <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                            <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <Choice Kind="OperationCallFlag" Name="EditPointsByType" />
-                              <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                              <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                             </p:NodeReference>
                             <Pin Id="OSAd4u7xwXJOvUy8QOaAMu" Name="Gradient" Kind="InputPin" />
                             <Pin Id="LQI0aQ7hg8UOhDYKIUH2tY" Name="Input" Kind="InputPin" />
@@ -6046,7 +6034,7 @@
                             <p:NodeReference>
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                              <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                              <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                             </p:NodeReference>
                             <Pin Id="S1Ry9kvPfvuMrJZwmS8jlh" Name="Input" Kind="StateInputPin" />
                             <Pin Id="S6RB5gSMgucP6x2xwzrLla" Name="Output" Kind="StateOutputPin" />
@@ -6180,10 +6168,10 @@
                     <Pin Id="JgQmUfdRo6xNS1xdUPXuje" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="263,354,76,19" Id="Jt858LUC9Y6OETW8wZGSgd">
-                    <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                    <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="FindLivePoint" />
-                      <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="LAEEPBeDTrsMQ4UjAEnuO0" Name="Gradient" Kind="InputPin" />
                     <Pin Id="NslDnsS4WokOP0DvOZUGET" Name="Point" Kind="InputPin" />
@@ -6260,10 +6248,10 @@
                             </Patch>
                           </Node>
                           <Node Bounds="401,802,93,19" Id="Lz7YMHuDtnyQT49rz4lQmy">
-                            <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                            <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <Choice Kind="OperationCallFlag" Name="EditPointsByType" />
-                              <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                              <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                             </p:NodeReference>
                             <Pin Id="JhoMwY24nlWLagskRXaESj" Name="Gradient" Kind="InputPin" />
                             <Pin Id="IkC2dJgMVuOLmoOv0wTgkx" Name="Input" Kind="InputPin" />
@@ -6300,7 +6288,7 @@
                             <p:NodeReference>
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                              <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                              <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                             </p:NodeReference>
                             <Pin Id="LHGMeSTykcQL9AhlSzVsty" Name="Input" Kind="StateInputPin" />
                             <Pin Id="NaOD1XsdPNoNoN90edip2b" Name="Output" Kind="StateOutputPin" />
@@ -6437,7 +6425,7 @@
                     <p:NodeReference>
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                      <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="FEnX3ECm70RPZ8huLbP5io" Name="Input" Kind="StateInputPin" />
                     <Pin Id="VNbcnAFRwMYLJaRibajVFO" Name="Output" Kind="StateOutputPin" />
@@ -6532,10 +6520,10 @@
                             </Patch>
                           </Node>
                           <Node Bounds="514,784,93,19" Id="V0QP1TWHrZCPG7zA52D7Tp">
-                            <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                            <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <Choice Kind="OperationCallFlag" Name="EditPointsByType" />
-                              <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                              <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                             </p:NodeReference>
                             <Pin Id="LwvX6lNAljQLTgX9NaPLjJ" Name="Gradient" Kind="InputPin" />
                             <Pin Id="RgYA9sj6PQON7ofuhUuNuf" Name="Input" Kind="InputPin" />
@@ -6704,7 +6692,7 @@
                     <p:NodeReference>
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                      <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="HE6yhlmjOEyNPCIKAUmSlX" Name="Input" Kind="StateInputPin" />
                     <Pin Id="RO0z8LvFrwRMg2GAEERzqA" Name="Output" Kind="StateOutputPin" />
@@ -6799,10 +6787,10 @@
                             </Patch>
                           </Node>
                           <Node Bounds="514,784,93,19" Id="S2HkIm709INO9dtxspFixG">
-                            <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+                            <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <Choice Kind="OperationCallFlag" Name="EditPointsByType" />
-                              <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                              <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                             </p:NodeReference>
                             <Pin Id="IInos33ehAmO9EBp03hsf4" Name="Gradient" Kind="InputPin" />
                             <Pin Id="BQLZXp8IxYSOwWPE0VZDa4" Name="Input" Kind="InputPin" />
@@ -7134,7 +7122,7 @@
               <p:NodeReference>
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
               </p:NodeReference>
               <Pin Id="E5qf28El9DJPYEUWbgsh2z" Name="Input" Kind="StateInputPin" />
               <Pin Id="FMZtBbDaLijOs59nvrcG11" Name="Output" Kind="StateOutputPin" />
@@ -7258,7 +7246,7 @@
               <p:NodeReference>
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
               </p:NodeReference>
               <Pin Id="VkPACWoGUghPaEm87fEXmr" Name="Input" Kind="StateInputPin" />
               <Pin Id="VcB8CUCjgkOP3koYSdLa1R" Name="Output" Kind="StateOutputPin" />
@@ -7330,9 +7318,9 @@
                 <Pin Id="U3ksTpSsHLpLKfpZCZwkhh" Name="Output" Kind="OutputPin" />
               </Node>
               <Node Bounds="267,265,69,26" Id="BpTHYODyju5NBN3gMrueyG">
-                <p:NodeReference LastCategoryFullName="Fuse.Control.GradientModel" LastSymbolSource="VL.Fuse.Control.vl">
+                <p:NodeReference>
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="RecordType" Name="GradientModel" />
+                  <CategoryReference Kind="RecordType" Name="Gradient1DModel" />
                   <Choice Kind="OperationCallFlag" Name="Split" />
                 </p:NodeReference>
                 <Pin Id="AVrT9tUfPPENaaRW3YGq40" Name="Input" Kind="StateInputPin" />
@@ -7699,7 +7687,7 @@
                     <p:NodeReference>
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                      <CategoryReference Kind="ClassType" Name="Gradient" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Gradient1D" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="NOyRmcTtiOZMknaHW0GhQl" Name="Input" Kind="StateInputPin" />
                     <Pin Id="Nkvl6X9BRx5PuaUSWVC5Se" Name="Output" Kind="StateOutputPin" />
@@ -12783,10 +12771,10 @@
       </Node>
       <!--
 
-    ************************ Gradient ************************
+    ************************ Gradient1D ************************
 
 -->
-      <Node Name="Gradient" Bounds="462,590" Id="MO0bnDHni8cQHLsENj8vJ4">
+      <Node Name="Gradient1D" Bounds="462,590" Id="MO0bnDHni8cQHLsENj8vJ4">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="ClassDefinition" Name="Class" />
         </p:NodeReference>
@@ -12825,9 +12813,9 @@
                   <Pin Id="RWCRxYnoSY6PB8d8qDox1Z" Name="Output" Kind="OutputPin" />
                 </Node>
                 <Node Bounds="437,592,69,26" Id="E2Bl16bjbwpNdudfeADSg7">
-                  <p:NodeReference LastCategoryFullName="Fuse.Control.GradientModel" LastSymbolSource="VL.Fuse.Control.vl">
+                  <p:NodeReference>
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <CategoryReference Kind="RecordType" Name="GradientModel" />
+                    <CategoryReference Kind="RecordType" Name="Gradient1DModel" />
                     <Choice Kind="OperationCallFlag" Name="Split" />
                   </p:NodeReference>
                   <Pin Id="E9sLPdEqWWRPqhb9XyPOMF" Name="Input" Kind="StateInputPin" />
@@ -13020,7 +13008,7 @@
               <Choice Kind="TypeFlag" Name="BehaviorSubject" />
               <p:TypeArguments>
                 <TypeReference>
-                  <Choice Kind="TypeFlag" Name="GradientModel" />
+                  <Choice Kind="TypeFlag" Name="Gradient1DModel" />
                 </TypeReference>
               </p:TypeArguments>
             </p:TypeAnnotation>
@@ -13058,7 +13046,7 @@
           <Patch Id="RCspOfe63VfOSqsj4gHEIV" Name="Create (Internal)" ParticipatingElements="ImwGPJzWX0yOC2I9CUtzfZ">
             <Pin Id="VihAlRo6m9dMaZdXAMOJo7" Name="Model" Kind="InputPin">
               <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="GradientModel" />
+                <Choice Kind="TypeFlag" Name="Gradient1DModel" />
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="KafTzVrYtQpO10qDgWKmtw" Name="Node Context" Kind="InputPin" Visibility="Optional" />
@@ -13082,10 +13070,10 @@
       </Node>
       <!--
 
-    ************************ GradientModel ************************
+    ************************ Gradient1DModel ************************
 
 -->
-      <Node Name="GradientModel" Aspects="Advanced" Bounds="260,590" Id="McjXVueLMOkLFomhbtFktl">
+      <Node Name="Gradient1DModel" Aspects="Advanced" Bounds="260,590" Id="McjXVueLMOkLFomhbtFktl">
         <p:NodeReference>
           <Choice Kind="RecordDefinition" Name="Record" />
           <FullNameCategoryReference ID="Primitive" />
@@ -13260,11 +13248,11 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="JIV3rbmhYTbLjcGoNyxur7" Location="VL.CoreLib" Version="2021.4.0-0366-gc15693d0df" />
+  <NugetDependency Id="JIV3rbmhYTbLjcGoNyxur7" Location="VL.CoreLib" Version="2021.4.0-0413-gaf9ffdce60" />
   <NugetDependency Id="KCo8njLLjYxQO6s0f2VBZ4" Location="VL.Inspector" IsForward="true" Version="0.0.0.0" />
-  <NugetDependency Id="CW7fba4yIA1MUIiXuGWtiO" Location="VL.Skia" Version="2021.4.0-0366-gc15693d0df" />
+  <NugetDependency Id="CW7fba4yIA1MUIiXuGWtiO" Location="VL.Skia" Version="2021.4.0-0413-gaf9ffdce60" />
   <NugetDependency Id="Vx71ZoTu3L8ObcjGJDQo15" Location="VL.Elementa" Version="0.0.0.0" />
-  <NugetDependency Id="Di2It3kwS5KN6uUqLYcnEy" Location="VL.Stride" Version="2021.4.0-0366-gc15693d0df" />
+  <NugetDependency Id="Di2It3kwS5KN6uUqLYcnEy" Location="VL.Stride" Version="2021.4.0-0413-gaf9ffdce60" />
   <NugetDependency Id="Lxx1xeeOBP5PFOLpgWup6d" Location="VL.Elementa.Editor" Version="0.0.0.0" />
   <DocumentDependency Id="BzKRI9uCRaOPQtcThht9ng" Location="./vl/Utils.vl" IsFriend="true" />
   <NugetDependency Id="BePCararsqEL1f18JM26aD" Location="VL.LerpX" IsForward="true" Version="0.0.0.0" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="OSEmF9DUuBpLUSPXzg7wU0" LanguageVersion="2021.4.0.366" Version="0.128">
-  <NugetDependency Id="P4PxpMOZlilOAXTCzy1Hw5" Location="VL.CoreLib" Version="2021.4.0-0366-gc15693d0df" />
+<Document xmlns:p="property" Id="OSEmF9DUuBpLUSPXzg7wU0" LanguageVersion="2021.4.0.413" Version="0.128">
+  <NugetDependency Id="P4PxpMOZlilOAXTCzy1Hw5" Location="VL.CoreLib" Version="2021.4.0-0413-gaf9ffdce60" />
   <Patch Id="LfOpSjdojGdPVxGBN42Bkw">
     <Canvas Id="EbwbcQ7EZcGNqQF4VrWCpy" DefaultCategory="Fuse.Control.HDE" CanvasType="FullCategory">
       <!--
@@ -254,7 +254,7 @@
               </Patch>
             </Node>
             <Node Bounds="505,263,61,26" Id="STnSqOqNyKdMkiJSVu2co7">
-              <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
+              <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient1D" LastSymbolSource="VL.Fuse.Control.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetColors" />
               </p:NodeReference>
@@ -273,7 +273,7 @@
           <Patch Id="GUhr2lJJGreLNTF8tkYuxk" Name="Update">
             <Pin Id="N1UOxlpSdqOMMKlLv1vIpy" Name="Value" Kind="InputPin">
               <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Gradient" />
+                <Choice Kind="TypeFlag" Name="Gradient1D" />
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="BkWnj0kYcvyL2KJJhECoeW" Name="Context" Kind="InputPin" />
@@ -780,8 +780,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Q3X2h85GTcQP08LU7SaRtb" Location="VL.Skia" Version="2021.4.0-0366-gc15693d0df" />
-  <NugetDependency Id="MibcgQ7kvQVNk57jLpWm6M" Location="VL.HDE" Version="2021.4.0-0366-gc15693d0df" />
+  <NugetDependency Id="Q3X2h85GTcQP08LU7SaRtb" Location="VL.Skia" Version="2021.4.0-0413-gaf9ffdce60" />
+  <NugetDependency Id="MibcgQ7kvQVNk57jLpWm6M" Location="VL.HDE" Version="2021.4.0-0413-gaf9ffdce60" />
   <DocumentDependency Id="Mi2G9W9eiWIPZOCkWxxYpp" Location="./VL.Fuse.Control.vl" IsFriend="true" />
-  <NugetDependency Id="My6NuQrW9ieN0iWpZ3muno" Location="VL.Stride" Version="2021.4.0-0366-gc15693d0df" />
+  <NugetDependency Id="My6NuQrW9ieN0iWpZ3muno" Location="VL.Stride" Version="2021.4.0-0413-gaf9ffdce60" />
 </Document>

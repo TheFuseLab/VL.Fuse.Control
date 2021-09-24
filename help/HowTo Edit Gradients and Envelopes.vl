@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="SR8TrPrZRTeMBS5i3pSqUn" LanguageVersion="2021.4.0.366" Version="0.128">
-  <NugetDependency Id="BW54RQO5VrtPcw9vvABNf3" Location="VL.CoreLib" Version="2021.4.0-0366-gc15693d0df" />
+<Document xmlns:p="property" Id="SR8TrPrZRTeMBS5i3pSqUn" LanguageVersion="2021.4.0.413" Version="0.128">
+  <NugetDependency Id="BW54RQO5VrtPcw9vvABNf3" Location="VL.CoreLib" Version="2021.4.0-0413-gaf9ffdce60" />
   <Patch Id="AP4lyFzx9eLM0FuXAEe6wa">
     <Canvas Id="PBSp7qkXW7cMcEcdahrDxx" DefaultCategory="Main" CanvasType="FullCategory" />
     <!--
@@ -15,45 +15,29 @@
       </p:NodeReference>
       <Patch Id="Lwsn4sRgFVNN0P9eL6rUXI">
         <Canvas Id="PRtjNhlyK0jPXWcBp5hrqt" CanvasType="Group">
-          <Node Bounds="587,354,59,19" Id="RijAh3ceHUrMmKl3D2oMvt">
-            <p:NodeReference LastCategoryFullName="Inspector" LastSymbolSource="VL.Inspector.vl">
+          <Node Bounds="150,585,68,19" Id="CSqNN7kYvbnLxvisB1OLIt">
+            <p:NodeReference>
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Inspector" />
-              <CategoryReference Kind="Category" Name="Inspector" NeedsToBeDirectParent="true">
-                <p:OuterCategoryReference Kind="Category" NeedsToBeDirectParent="true" />
-              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="Gradient1D" />
             </p:NodeReference>
-            <Pin Id="GY6z2Ijxu1KNOeyxdCucFD" Name="Update Selection" Kind="InputPin" />
-            <Pin Id="Q632fopeQ0NLqdpaK00c5m" Name="Found" Kind="OutputPin" />
-            <Pin Id="Fd3RqrPlIbxO4Pbo01R8eH" Name="On Data" Kind="OutputPin" />
-          </Node>
-          <Node Bounds="235,579,55,19" Id="CSqNN7kYvbnLxvisB1OLIt">
-            <p:NodeReference LastCategoryFullName="Fuse.Control.Gradient" LastSymbolSource="VL.Fuse.Control.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Gradient" />
-            </p:NodeReference>
-            <Pin Id="GajtKW81TTLNyWFzImfWVu" Name="Model" Kind="InputPin">
-              <p:DefaultValue />
-            </Pin>
+            <Pin Id="GajtKW81TTLNyWFzImfWVu" Name="Model" Kind="InputPin" />
             <Pin Id="Ofy6QYrxlvrLMtXHWgOJ4Q" Name="Output Resolution" Kind="InputPin" />
             <Pin Id="BPd2SuZAVwJN0wrFZpgOrs" Name="Output" Kind="StateOutputPin" />
             <Pin Id="HTv4ILdF5prOWIIdi6yGyC" Name="Texture" Kind="OutputPin" />
           </Node>
-          <Node Bounds="555,580,70,19" Id="FFbVxjcmOyBLN1zoUSOdcR">
+          <Node Bounds="470,586,70,19" Id="FFbVxjcmOyBLN1zoUSOdcR">
             <p:NodeReference LastCategoryFullName="Fuse.Control.Envelope1D" LastSymbolSource="VL.Fuse.Control.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Envelope1D" />
             </p:NodeReference>
-            <Pin Id="MNNx8ly9iK8Oy22Dox2XEw" Name="Model" Kind="InputPin">
-              <p:DefaultValue />
-            </Pin>
+            <Pin Id="MNNx8ly9iK8Oy22Dox2XEw" Name="Model" Kind="InputPin" />
             <Pin Id="UplyEQjcSLJLYKmxenPxgM" Name="Output Resolution" Kind="InputPin" />
             <Pin Id="AyEFHn6wfqnLpnFrenKXa7" Name="Output" Kind="StateOutputPin" />
             <Pin Id="LQrXsf1wNGvLX6BLZObLWI" Name="Texture" Kind="OutputPin" />
           </Node>
-          <Pad Id="Dqkweo9heKeOjLQ2XH6Gxx" Comment="" Bounds="237,623,213,62" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="Kyd66ukPXqzMtfkAS5DbA5" Comment="" Bounds="557,620,169,79" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="CUpcXrbGX13PMQ6n9OT0ya" Bounds="197,202,377,88" ShowValueBox="true" isIOBox="true" Value="Fuse.Control allows to create and manipulate color gradients and value envelopes.&#xD;&#xA;these nodes output a texture, which you can use in your Fuse shader graph to control your content">
+          <Pad Id="Dqkweo9heKeOjLQ2XH6Gxx" Comment="" Bounds="152,629,213,62" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Kyd66ukPXqzMtfkAS5DbA5" Comment="" Bounds="472,626,169,79" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="CUpcXrbGX13PMQ6n9OT0ya" Bounds="112,208,377,88" ShowValueBox="true" isIOBox="true" Value="Fuse.Control allows to create and manipulate color gradients and value envelopes.&#xD;&#xA;these nodes output a texture, which you can use in your Fuse shader graph to control your content">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -62,7 +46,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="JzwVjYlXOuTMFKQeGKsC3Z" Bounds="198,107,336,79" ShowValueBox="true" isIOBox="true" Value="How to edit gradients and envelopes">
+          <Pad Id="JzwVjYlXOuTMFKQeGKsC3Z" Bounds="113,113,336,79" ShowValueBox="true" isIOBox="true" Value="How to edit gradients and envelopes">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -71,7 +55,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="THC3rz8AZuYPceZUIgTqiU" Bounds="168,334,35,27" ShowValueBox="true" isIOBox="true" Value="1.">
+          <Pad Id="THC3rz8AZuYPceZUIgTqiU" Bounds="83,340,35,27" ShowValueBox="true" isIOBox="true" Value="1.">
             <p:TypeAnnotation>
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -80,7 +64,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="OyWZYNGTUmeMDyuDq5h3lj" Bounds="206,341,301,64" ShowValueBox="true" isIOBox="true" Value="In order to edit the gradient/envelope you need to place an Inspector node into your patch.&#xD;&#xA;This will open the inspector window.&#xD;&#xA;">
+          <Pad Id="OyWZYNGTUmeMDyuDq5h3lj" Bounds="121,347,301,64" ShowValueBox="true" isIOBox="true" Value="In order to edit the gradient/envelope you need to place an Inspector node into your patch.&#xD;&#xA;This will open the inspector window.&#xD;&#xA;">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -89,7 +73,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="HTzEFobXqBpMnX9VGoYU3h" Bounds="168,454,35,27" ShowValueBox="true" isIOBox="true" Value="2.">
+          <Pad Id="HTzEFobXqBpMnX9VGoYU3h" Bounds="83,460,35,27" ShowValueBox="true" isIOBox="true" Value="2.">
             <p:TypeAnnotation>
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -98,7 +82,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="DT57skBukEdPQYexzh2XVy" Bounds="206,460,372,62" ShowValueBox="true" isIOBox="true" Value="Once the inspector window is open you can simply select the gradient/envelope node in the patch and the inspector will react accordingly, showing the editor for the node">
+          <Pad Id="DT57skBukEdPQYexzh2XVy" Bounds="121,466,372,62" ShowValueBox="true" isIOBox="true" Value="Once the inspector window is open you can simply select the gradient/envelope node in the patch and the inspector will react accordingly, showing the editor for the node">
             <p:TypeAnnotation>
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -107,6 +91,15 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
+          <Node Bounds="661,418,59,19" Id="ScZIDJ1ayWMPBzupwsVN1x">
+            <p:NodeReference LastCategoryFullName="Inspector" LastSymbolSource="VL.Inspector.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Inspector" />
+            </p:NodeReference>
+            <Pin Id="G8uRYM4nYfXMt6pPiv7Jcx" Name="Update Selection" Kind="InputPin" />
+            <Pin Id="PWvr9usA4XVLWGyCuA2tRT" Name="Found" Kind="OutputPin" />
+            <Pin Id="DlUGfj9NxsRNbpAjqGBYXF" Name="On Data" Kind="OutputPin" />
+          </Node>
         </Canvas>
         <Patch Id="LV5ndmLJ4QjLGdzjxgR24d" Name="Create" />
         <Patch Id="QpsDG4gtoU9N80wWPipaGI" Name="Update" />
@@ -119,8 +112,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="SHq3sK7pHawPVUGJhlSN8D" Location="VL.CoreLib" Version="2021.4.0-0366-gc15693d0df" />
+  <NugetDependency Id="SHq3sK7pHawPVUGJhlSN8D" Location="VL.CoreLib" Version="2021.4.0-0413-gaf9ffdce60" />
   <NugetDependency Id="FsisdF5N1K6PmmQ23qh7fk" Location="VL.Fuse.Control" Version="0.0.0.0" />
-  <NugetDependency Id="Q0fufDvpvGUOkJtHXMXtkw" Location="VL.Skia" Version="2021.4.0-0366-gc15693d0df" />
+  <NugetDependency Id="Q0fufDvpvGUOkJtHXMXtkw" Location="VL.Skia" Version="2021.4.0-0413-gaf9ffdce60" />
   <DocumentDependency Id="F5LlgWLbGv2PSB9lc3ETow" Location="../VL.Fuse.Control.HDE.vl" />
 </Document>
