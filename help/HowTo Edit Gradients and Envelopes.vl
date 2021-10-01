@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="SR8TrPrZRTeMBS5i3pSqUn" LanguageVersion="2021.4.0.413" Version="0.128">
-  <NugetDependency Id="BW54RQO5VrtPcw9vvABNf3" Location="VL.CoreLib" Version="2021.4.0-0413-gaf9ffdce60" />
+<Document xmlns:p="property" Id="SR8TrPrZRTeMBS5i3pSqUn" LanguageVersion="2021.4.0.451" Version="0.128">
+  <NugetDependency Id="BW54RQO5VrtPcw9vvABNf3" Location="VL.CoreLib" Version="2021.4.0-0451-g8c9c38498a" />
   <Patch Id="AP4lyFzx9eLM0FuXAEe6wa">
     <Canvas Id="PBSp7qkXW7cMcEcdahrDxx" DefaultCategory="Main" CanvasType="FullCategory" />
     <!--
@@ -30,7 +30,9 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Envelope1D" />
             </p:NodeReference>
-            <Pin Id="MNNx8ly9iK8Oy22Dox2XEw" Name="Model" Kind="InputPin" />
+            <Pin Id="MNNx8ly9iK8Oy22Dox2XEw" Name="Model" Kind="InputPin">
+              <p:DefaultValue />
+            </Pin>
             <Pin Id="UplyEQjcSLJLYKmxenPxgM" Name="Output Resolution" Kind="InputPin" />
             <Pin Id="AyEFHn6wfqnLpnFrenKXa7" Name="Output" Kind="StateOutputPin" />
             <Pin Id="LQrXsf1wNGvLX6BLZObLWI" Name="Texture" Kind="OutputPin" />
@@ -112,8 +114,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="SHq3sK7pHawPVUGJhlSN8D" Location="VL.CoreLib" Version="2021.4.0-0413-gaf9ffdce60" />
+  <NugetDependency Id="SHq3sK7pHawPVUGJhlSN8D" Location="VL.CoreLib" Version="2021.4.0-0451-g8c9c38498a" />
   <NugetDependency Id="FsisdF5N1K6PmmQ23qh7fk" Location="VL.Fuse.Control" Version="0.0.0.0" />
-  <NugetDependency Id="Q0fufDvpvGUOkJtHXMXtkw" Location="VL.Skia" Version="2021.4.0-0413-gaf9ffdce60" />
+  <NugetDependency Id="Q0fufDvpvGUOkJtHXMXtkw" Location="VL.Skia" Version="2021.4.0-0451-g8c9c38498a" />
   <DocumentDependency Id="F5LlgWLbGv2PSB9lc3ETow" Location="../VL.Fuse.Control.HDE.vl" />
 </Document>
